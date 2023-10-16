@@ -12,7 +12,10 @@ const userRoute = express.Router();
 
 userRoute.get(
   "/googlelogin",
-  passport.authenticate("google", { scope: ["profile"] })
+  passport.authenticate("google", {
+    scope: ["profile"],
+    prompt: "select_account",
+  })
 );
 
 userRoute.get(
